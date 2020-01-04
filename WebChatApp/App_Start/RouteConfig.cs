@@ -33,7 +33,16 @@ namespace WebChatApp
                 url: "chat",
                 defaults: new {controller="Chat",action="Index"}
                 );
-            
+            routes.MapRoute(
+                name: "SendMessage",
+                url: "send_message",
+                defaults: new { Controller = "Chat", action = "SendMessage" }
+                );
+            routes.MapRoute(
+                name: "PusherAuth",
+                url: "pusher/auth",
+                defaults: new {Controller="Auth",action="AuthForChannel"}
+                );
         }
     }
 }
